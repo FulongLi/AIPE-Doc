@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">An open engineering knowledge loop</title><desc id="desc">Learn, design, validate, and share form a continuous cycle.</desc>
+  <defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#d6d0c2"/></pattern><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7" fill="none" stroke="#241c10"/></marker></defs>
+  <rect width="1000" height="420" fill="#f6f3ec"/><rect width="1000" height="420" fill="url(#grid)"/>
+  <g fill="none" stroke="#241c10" stroke-width="2" marker-end="url(#arrow)"><path d="M245 160H335"/><path d="M465 160H555"/><path d="M685 160H775"/><path d="M845 230V305H175V235"/></g>
+  <g stroke="#241c10" stroke-width="1.5"><rect x="105" y="100" width="140" height="130" rx="4" fill="white"/><rect x="325" y="100" width="140" height="130" rx="4" fill="white"/><rect x="545" y="100" width="140" height="130" rx="4" fill="white"/><rect x="765" y="100" width="140" height="130" rx="4" fill="#f5d54a"/></g>
+  <g fill="#241c10" font-family="Arial, sans-serif" text-anchor="middle"><g font-size="12" letter-spacing="2"><text x="175" y="139">01</text><text x="395" y="139">02</text><text x="615" y="139">03</text><text x="835" y="139">04</text></g><g font-size="24" font-weight="600"><text x="175" y="183">Learn</text><text x="395" y="183">Design</text><text x="615" y="183">Validate</text><text x="835" y="183">Share</text></g><text x="500" y="348" font-size="14" fill="#6b6355" letter-spacing="2">EVERY CYCLE MAKES THE NEXT ONE BETTER</text></g>
+</svg>

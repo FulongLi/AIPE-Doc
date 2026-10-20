@@ -1,0 +1,71 @@
+@page { size: 254mm 142.875mm; margin: 0; }
+body { background: var(--canvas); }
+.deck { max-width: 1280px; margin: 24px auto 40px; padding: 0 24px; }
+.slide { position: relative; display: flex; flex-direction: column; aspect-ratio: 16/9; padding: 4.4% 5.3% 3%; margin-bottom: 24px; background: white; box-shadow: 0 8px 30px #241c1008; scroll-margin-top: 90px; }
+.slide h1 { font-size: clamp(36px, 5.5vw, 74px); line-height: 1.17; max-width: 900px; margin: 30px 0 24px; }
+.slide h2 { font-size: clamp(28px, 3.6vw, 48px); margin: 12px 0 24px; }
+.slide p { font-size: clamp(14px, 1.45vw, 19px); }
+.slide .page-header { margin-bottom: 14px; padding-bottom: 12px; }
+.slide > .page-header, .slide > .page-footer { flex-shrink: 0; }
+.slide .page-footer { margin-top: auto; }
+.slide .lead { max-width: 720px; color: var(--muted); }
+.slide-cover { background: var(--yellow); }
+.slide-cover .page-header, .slide-cover .page-footer { border-color: #241c1033; }
+.slide-cover h1 { max-width: 800px; }
+.slide-cover .lead { color: var(--ink); }
+.slide-cover .tag { border-color: #241c1044; }
+.slide-number { font-size: 130px; font-weight: 700; line-height: 1; letter-spacing: -.07em; position: absolute; right: 6%; bottom: 16%; opacity: .12; }
+.slide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 5px 0 24px; }
+.slide-card { border-top: 2px solid var(--ink); padding: 18px 0; }
+.slide-card .number { color: #8a7100; font-size: 12px; }
+.slide-card h3 { font-size: 23px; margin: 22px 0 10px; }
+.slide-card p { font-size: 15px; color: var(--muted); }
+.slide .two-col { align-items: center; gap: 40px; margin-bottom: 24px; }
+.slide figure { min-width: 0; }
+.slide .two-col p { font-size: 16px; }
+.slide .callout { padding: 16px 22px; }
+.slide .callout p { font-size: 14px; }
+.slide .statement { font-size: clamp(32px, 4.5vw, 62px); max-width: 900px; line-height: 1.35; letter-spacing: -.04em; margin: 30px 0 32px; }
+.slide .statement em { font-style: normal; background: var(--yellow); padding: 0 8px; }
+.slide-controls { display: none; }
+body.presenting { overflow: hidden; background: var(--ink); }
+body.presenting .toolbar, body.presenting .print-tip { display: none; }
+body.presenting .deck { display: flex; align-items: center; justify-content: center; max-width: none; width: 100vw; height: 100dvh; padding: 0; margin: 0; }
+body.presenting .slide { display: none; width: min(100vw, 177.7778dvh); flex-shrink: 0; margin: 0; padding: 4vh 5vw 3vh; }
+body.presenting .slide.active { display: flex; }
+body.presenting .slide-controls { display: flex; position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); align-items: center; gap: 15px; z-index: 30; background: var(--paper); border: 1px solid var(--line); border-radius: 99px; padding: 5px 12px; box-shadow: 0 2px 20px #0002; font-size: 12px; }
+.slide-controls button { border: 0; background: transparent; padding: 5px 10px; color: var(--ink); }
+@media screen and (max-width: 700px) {
+  .deck { padding: 0 12px; margin-top: 12px; }
+  .slide { aspect-ratio: auto; min-height: 560px; padding: 26px; }
+  .slide h1 { font-size: 40px; }
+  .slide h2 { font-size: 29px; }
+  .slide-grid, .slide .two-col { grid-template-columns: 1fr; gap: 12px; }
+  .slide-card h3 { margin: 8px 0; }
+  .slide-card { padding: 14px 0; }
+  .slide .page-footer { margin-top: 30px; }
+  .slide-number { display: none; }
+  body.presenting { overflow: auto; }
+  body.presenting .deck { height: auto; min-height: 100dvh; }
+  body.presenting .slide { min-height: 100dvh; width: 100%; padding: 25px 25px 70px; }
+}
+@media print {
+  body, body.presenting { overflow: visible; background: white; }
+  .deck, body.presenting .deck { display: block; width: auto; height: auto; max-width: none; padding: 0; margin: 0; }
+  .slide, body.presenting .slide, body.presenting .slide.active { display: flex; width: 254mm; height: 142.875mm; min-height: 0; aspect-ratio: auto; padding: 10mm 14mm 8mm; margin: 0; box-shadow: none; break-after: page; break-inside: avoid; }
+  .slide:last-child { break-after: auto; }
+  .slide h1 { font-size: 40pt; margin: 18px 0; }
+  .slide h2 { font-size: 29pt; margin: 8px 0 20px; }
+  .slide p { font-size: 12pt; }
+  .slide .two-col p { font-size: 11pt; }
+  .slide .statement { font-size: 35pt; margin: 22px 0; }
+  .slide-card h3 { font-size: 18pt; margin-top: 14px; }
+  .slide-card p { font-size: 10pt; }
+  .slide-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .slide .two-col { grid-template-columns: 1fr 1fr; }
+  .slide th, .slide td { padding: 8px 10px; }
+  .slide .callout { padding: 12px 18px; }
+  .slide .page-footer { margin-top: auto; }
+  .slide-number { display: block; font-size: 100px; }
+  .slide-controls { display: none !important; }
+}

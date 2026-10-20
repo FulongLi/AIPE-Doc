@@ -1,0 +1,8 @@
+{
+  "name": "aipe-doc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AIPE HTML document and slide templates with print layouts",
+  "scripts": { "dev": "node scripts/serve.mjs", "check": "node scripts/check.mjs" },
+  "engines": { "node": ">=18" }
+}

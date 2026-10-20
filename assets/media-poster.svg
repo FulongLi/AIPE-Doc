@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-labelledby="title desc">
+ <title id="title">Video template poster</title><desc id="desc">A play symbol inside an engineering grid. Replace with your video cover.</desc>
+ <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ded9cf"/></pattern></defs>
+ <rect width="1000" height="480" fill="#f6f3ec"/><rect width="1000" height="480" fill="url(#grid)"/>
+ <path d="M100 240H325L370 140L430 340L490 140L550 340L595 240H900" fill="none" stroke="#c5beaf" stroke-width="3"/>
+ <circle cx="500" cy="240" r="65" fill="#f5d54a" stroke="#241c10" stroke-width="2"/><path d="m485 214 40 26-40 26Z" fill="#241c10"/>
+ <text x="42" y="50" font-family="Arial, sans-serif" font-size="16" fill="#6b6355" letter-spacing="3">AIPE / MEDIA</text>
+</svg>

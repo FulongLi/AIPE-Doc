@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="AIPE A4 HTML 文档模板：文字、图片、表格与视频。"><title>工程知识分享 · AIPE 文档模板</title><link rel="icon" href="../assets/spirit-connect.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/base.css"><link rel="stylesheet" href="../assets/document.css"><script defer src="../assets/template.js"></script></head>
+<body>
+ <header class="toolbar"><a class="toolbar-brand" href="../index.html"><img class="logo" src="../assets/aipe-logo.svg" alt="AIPE"><span>文档模板 / Document</span></a><div class="toolbar-actions"><a href="../docs/guide.html">使用指南</a><a class="button secondary" href="slides.html">Slides ↗</a><button class="button" type="button" data-print>打印 / 存为 PDF</button></div></header>
+ <p class="print-tip">A4 纵向 · 默认比例 100% · 边距采用 CSS 默认值 · 关闭浏览器页眉页脚 · 开启背景图形</p>
+ <div class="document-shell">
+  <nav class="document-nav screen-only" aria-label="文档目录"><div class="eyebrow">CONTENTS</div><a href="#cover">01 / 封面与概览</a><a href="#content">02 / 图文与表格</a><a href="#media">03 / 视频与参考</a><p class="muted" style="font-size:11px; margin-top:24px">示例内容，可自由替换。<br>编辑 HTML 即可开始。</p></nav>
+  <main class="document-pages">
+   <!-- Copy a .doc-page for a new authored page. Long content may flow onto extra printed pages. -->
+   <article class="doc-page cover" id="cover" aria-labelledby="document-title">
+    <header class="page-header"><a href="https://aipel.co.uk/"><img class="logo" src="../assets/aipe-logo.svg" alt="AIPE"></a><span class="eyebrow">TECHNICAL NOTE / 001</span></header>
+    <div class="kicker"><span class="eyebrow">AIPE / KNOWLEDGE SHARING</span><span class="tag">示例模板 · Draft</span></div>
+    <h1 id="document-title">从想法到实践<br>工程知识分享</h1>
+    <p class="lead">让一份文档承载完整的思考：<br>有清晰的文字，也有图像、数据和演示。</p>
+    <figure class="cover-art"><img src="../assets/engineering-loop.svg" alt="开放工程知识循环：学习、设计、验证、分享，再回到学习。"><figcaption>AIPE 的开放工程理念：学习、构建、探索，并把经验分享给下一位工程师。</figcaption></figure>
+    <dl class="cover-meta"><div><dt>作者 / Author</dt><dd>[你的名字] · [团队 / 机构]</dd></div><div><dt>日期 / Date</dt><dd><time datetime="2026-10-20">2026.10.20</time></dd></div><div><dt>版本 / Version</dt><dd>v0.1 · 待审阅</dd></div><div><dt>分享范围 / Audience</dt><dd>[公开 / 团队 / 指定对象]</dd></div></dl>
+    <section class="callout"><strong>摘要 / Abstract</strong><p>在这里用三到五句话描述问题、方法与主要结论。先让读者理解这份文档的价值，再展开细节。这是一份版式示例；发布前请替换所有占位内容。</p></section>
+    <footer class="page-footer"><div class="footer-brand"><img src="../assets/spirit-connect.svg" alt="Spirit Connect"><span>AIPE Labs / Spirit Connect<br><a href="https://aipel.co.uk/">aipel.co.uk</a></span></div><span>AIPE-NOTE-001 · v0.1　/　01</span></footer>
+   </article>
+   <article class="doc-page" id="content" aria-labelledby="content-title">
+    <header class="page-header"><img class="logo" src="../assets/aipe-logo.svg" alt="AIPE"><span class="eyebrow">ENGINEERING NOTE</span></header>
+    <div class="section-label">01 / CONTEXT & APPROACH</div><h2 id="content-title">把复杂的问题，讲清楚。</h2>
+    <section><p>一份好的技术文档，应当让读者找到三个答案：为什么做、怎么做，以及结果意味着什么。先描述背景与边界，再交代方法、证据和局限。</p><p>这里是普通正文。你可以加入 <strong>重点说明</strong>、<em>术语强调</em>、单位与公式，例如 P = V × I；也可以通过 <a href="#references">参考资料</a> 连接到原始来源。复杂公式可插入本地 SVG，确保离线与打印清晰。</p></section>
+    <section class="two-col"><div><h3>问题与目标</h3><p>描述你希望解决的问题，说明目标读者和使用场景。写明输入、输出与验收标准。</p></div><div><h3>方法与边界</h3><p>记录采用的方法与关键假设。区分演示数据、计算结果和真实测量，方便读者复核。</p></div></section>
+    <section><figure><img src="../assets/engineering-loop.svg" alt="四个相连的阶段：学习、设计、验证、分享。"><figcaption>图 1. 用图形表达过程；在图注中补充条件、来源和需要关注的细节。</figcaption></figure></section>
+    <section class="table-scroll"><table><caption>表 1. 内容组织示例（非工程实测数据）</caption><thead><tr><th scope="col">模块</th><th scope="col">记录什么</th><th scope="col">推荐载体</th></tr></thead><tbody><tr><th scope="row">背景</th><td>目标、范围、约束与假设</td><td>文字 + 示意图</td></tr><tr><th scope="row">方法</th><td>流程、配置与输入参数</td><td>图文 + 表格</td></tr><tr><th scope="row">验证</th><td>证据、差异与可复现步骤</td><td>数据 + 视频</td></tr><tr><th scope="row">结论</th><td>关键发现、局限与下一步</td><td>摘要 + 引用</td></tr></tbody></table></section>
+    <section class="callout compact"><strong>关键结论 / Key takeaway</strong><p>每个重要判断，都应当可以追溯到证据。图表需标明来源，数值需写明单位；尚未验证的内容，应明确标记。</p></section>
+    <footer class="page-footer"><span>AIPE Labs / 工程知识分享</span><span>AIPE-NOTE-001 · v0.1　/　02</span></footer>
+   </article>
+   <article class="doc-page" id="media" aria-labelledby="media-title">
+    <header class="page-header"><img class="logo" src="../assets/aipe-logo.svg" alt="AIPE"><span class="eyebrow">MEDIA & REFERENCES</span></header>
+    <div class="section-label">02 / SHOW & EXPLAIN</div><h2 id="media-title">能演示，也能留下记录。</h2>
+    <section><p>实验过程、操作步骤或仿真动画，都可以嵌入 HTML。网页里播放视频，PDF 里保留封面、要点与可点击链接，让两种阅读方式都能理解内容。</p></section>
+    <section><figure data-video-slot>
+     <div class="screen-media"><video controls preload="none" poster="../assets/media-poster.svg" aria-label="演示视频" hidden>
+      <!-- Add a source to enable playback: <source src="../assets/demo.mp4" type="video/mp4"> -->
+      <!-- If speech conveys information, add a real WebVTT captions track here. -->
+      你的浏览器不支持视频，请使用下方链接。
+     </video><div class="media-placeholder"><img class="media-poster" src="../assets/media-poster.svg" alt="视频封面占位图，黄色播放符号与波形背景。"><span>视频插槽 · 请添加自己的 MP4 / WebM</span></div></div>
+     <img class="print-media media-poster" src="../assets/media-poster.svg" alt="视频封面：请通过下方链接观看发布后的视频。">
+     <figcaption>视频 1. [替换为演示标题、时长与拍摄 / 仿真条件。]</figcaption>
+    </figure><p class="media-link" style="font-size:11px; margin-top:10px"><strong>观看地址：</strong>[发布前填写稳定的 HTTPS 视频地址，并设置为链接。]</p></section>
+    <section class="two-col"><div><h3>演示要点</h3><p>[要点一：观众应当看到什么？]<br>[要点二：关键条件是什么？]<br>[要点三：结果说明了什么？]</p></div><div><h3>文字替代说明</h3><p>[用文字记录视频中的关键信息。它既是阅读辅助，也让无法播放视频的 PDF 保持完整。]</p></div></section>
+    <section id="references"><div class="section-label">03 / SOURCES & NEXT STEPS</div><h3>参考与后续行动</h3><ol class="references"><li><a href="https://aipel.co.uk/">AIPE 官网 · aipel.co.uk</a> — 品牌信息与开放工程理念。</li><li>[作者，资料标题，年份，稳定链接或 DOI。]</li><li>[下一步行动、负责人、时间与验收方式。]</li></ol></section>
+    <section class="callout compact"><strong>分享前检查</strong><p>替换占位文字与视频地址；确认图片和数据的使用权限；检查 PDF 分页、链接、版本号及分享范围。</p></section>
+    <footer class="page-footer"><span>AIPE Labs / 工程知识分享</span><span>AIPE-NOTE-001 · v0.1　/　03</span></footer>
+   </article>
+  </main>
+ </div>
+</body></html>

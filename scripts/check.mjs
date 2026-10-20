@@ -39,5 +39,18 @@ for (const file of files.filter(file => file.endsWith('.html'))) {
     } catch (error) { failures.push(`${path.relative(root, file)}: ${ref} (${error.message})`); }
   }
 }
+// The entry points are English by default, with complete Chinese counterparts.
+for (const entry of ['index.html', 'templates/document.html', 'templates/slides.html', 'docs/guide.html']) {
+  const chinese = entry.replace('.html', '.zh.html');
+  for (const [filename, language, counterpart] of [[entry, 'en', chinese], [chinese, 'zh-CN', entry]]) {
+    try {
+      const html = await readFile(path.join(root, filename), 'utf8');
+      if (!html.includes(`<html lang="${language}">`)) failures.push(`${filename}: expected language ${language}`);
+      const switchTag = [...html.matchAll(/<a\b[^>]*>/g)].map(match => match[0]).find(tag => tag.includes('class="language-link"'));
+      if (!switchTag?.includes(`href="${path.basename(counterpart)}"`)) failures.push(`${filename}: missing matching language switch`);
+      if (!html.includes(`hreflang="x-default" href="${path.basename(entry)}"`)) failures.push(`${filename}: English must be the default alternate`);
+    } catch (error) { failures.push(`${filename}: ${error.message}`); }
+  }
+}
 if (failures.length) { console.error(failures.join('\n')); process.exitCode = 1; }
 else console.log(`OK: ${files.filter(file => file.endsWith('.html')).length} HTML files; ${links} local links/assets checked.`);

@@ -28,6 +28,7 @@ body { background: var(--canvas); }
 @media screen and (max-width: 700px) { .document-shell { padding: 12px; } .doc-page { min-height: auto; padding: 28px 24px; } .doc-page h1 { font-size: 37px; } .doc-page h2 { font-size: 24px; } .doc-page .page-footer { margin-top: 40px; } .cover-meta { grid-template-columns: 1fr 1fr; } }
 @media print {
   body { font-size: 10pt; background: white; }
+  html[lang="en"] body { line-height: 1.55; }
   .document-shell { display: block; padding: 0; }
   .document-pages { max-width: none; }
   .doc-page { width: auto; min-height: 262mm; padding: 0; margin: 0; box-shadow: none; break-after: page; }

@@ -34,6 +34,7 @@ p + p { margin-top: .8em; }
 .toolbar-brand span { padding-left: 18px; border-left: 1px solid var(--line); font-size: 12px; }
 .toolbar-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .toolbar-actions a:not(.button) { font-size: 12px; }
+.language-link { white-space: nowrap; text-underline-offset: 4px; }
 .print-tip { padding: 9px 20px; text-align: center; font-size: 11px; color: var(--muted); }
 .kicker { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
 .page-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
@@ -72,6 +73,8 @@ code { font-family: Consolas, monospace; background: #efede6; padding: 2px 5px; 
   .screen-media { display: none !important; }
   a { text-decoration: underline; }
   .page-header a, .page-footer a { text-decoration: none; }
+  .page-header .logo { height: 30.27px; flex-shrink: 0; object-fit: contain; }
+  .page-footer img { height: 25px; flex-shrink: 0; object-fit: contain; }
   h1, h2, h3 { break-after: avoid; }
   p { orphans: 3; widows: 3; }
   figure, .callout, tr { break-inside: avoid; }

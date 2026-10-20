@@ -13,7 +13,9 @@ document.querySelectorAll('[data-video-slot]').forEach(figure => {
       if (placeholder) {
         placeholder.hidden = false;
         const label = placeholder.querySelector('span');
-        if (label) label.textContent = '视频暂时无法加载，请使用下方链接';
+        if (label) label.textContent = document.documentElement.lang.startsWith('zh')
+          ? '视频暂时无法加载，请使用下方链接'
+          : 'Video unavailable. Please use the link below.';
       }
     });
   }

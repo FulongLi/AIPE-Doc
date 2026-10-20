@@ -1,56 +1,64 @@
 # AIPE Doc
 
-以 HTML 为主的 AIPE 品牌文档与演示模板。支持网页阅读、离线分享和浏览器“另存为 PDF”。
+English is the default language. [简体中文](README.zh-CN.md) is available as an optional edition.
 
-## 设计选择
+AIPE-branded HTML templates for web reading, offline sharing and browser PDF export.
 
-采用一套共享内容组件、两种版式：
+## Formats and languages
 
-| 版式 | 用途 | PDF |
-| --- | --- | --- |
-| Document | 报告、教程、研究笔记、项目方案；可混排文字、图片、表格、视频 | A4 纵向 |
-| Slides | 技术分享、汇报、教学；支持逐页播放与键盘控制 | 16:9 横向，每张一页 |
+One set of shared components, two layouts, and an independent template in each language:
 
-不另设“表格文档”或“视频文档”。视频属于内容模块，PDF 中以封面、说明和链接呈现。两种版式共享设计语言与组件；不会自动把报告转换成演讲稿。
+| Format | English (default) | Chinese | PDF layout |
+| --- | --- | --- | --- |
+| Document | [document.html](templates/document.html) | [document.zh.html](templates/document.zh.html) | A4 portrait, 3 sample pages |
+| Slides | [slides.html](templates/slides.html) | [slides.zh.html](templates/slides.zh.html) | 16:9 landscape, 5 sample slides |
 
-## 开始使用
+Documents suit reports, research notes, proposals and tutorials. Slides support talks, teaching, presentation mode and keyboard navigation. Both can combine text, images, tables and video. Video is a content module, not a separate format; PDFs retain its cover, explanation and viewing link.
 
-直接用浏览器打开 `index.html`，无需安装依赖。可选本地服务（Node.js >= 18）：
+The gallery, templates and user guide open in English by default. The language link opens the matching Chinese edition. Separate HTML files work offline without runtime translation. Edits are not automatically translated or synchronised. When copying a template, update or remove its language link so it points to your own translation.
+
+## Get started
+
+Open [index.html](index.html) directly in a browser. No installation or build is required. The optional Chinese gallery is [index.zh.html](index.zh.html).
+
+With Node.js 18 or newer, run:
 
 ```sh
 npm run dev
 ```
 
-访问 <http://127.0.0.1:4173>。`npm run check` 检查本地资源和链接。
+Open <http://127.0.0.1:4173>. Run `npm run check` to validate local links, assets and language pairs. Without npm, use `node scripts/serve.mjs` and `node scripts/check.mjs` directly.
 
-在 `templates/` 内复制模板并编辑 HTML，保留相对路径。作者、日期、版本、来源、媒体地址和页码需要随内容更新。详细说明在 `docs/guide.html`。
+Copy a template inside `templates/`, rename it and edit the HTML. Preserve relative paths, and update the author, date, version, sources, media URLs and manually written page numbers. Keep `lang="en"` for English or `lang="zh-CN"` for Chinese.
+
+See the [English user guide](docs/guide.html) or [中文使用指南](docs/guide.zh.html).
 
 ```text
-index.html                    模板入口
-templates/document.html       3 页文档示例
-templates/slides.html         5 页演示示例
-docs/guide.html               可阅读与打印的写作指南
-assets/base.css               品牌与内容组件
-assets/document.css           文档布局及 A4 打印
-assets/slides.css             演示布局及 16:9 打印
-assets/template.js            打印、视频插槽与演示控制
-assets/BRAND.md               Logo 来源与品牌说明
-scripts/serve.mjs             仅监听本机的静态预览服务
-scripts/check.mjs             资源与链接检查，无依赖
+index.html / index.zh.html                 English / Chinese gallery
+templates/document.html / document.zh.html Document templates
+templates/slides.html / slides.zh.html     Slide templates
+docs/guide.html / guide.zh.html            User guides
+assets/base.css                           Shared brand and content components
+assets/document.css                       Document and A4 print layouts
+assets/slides.css                         Presentation and 16:9 print layouts
+assets/template.js                        Print, video slots and slide controls
+assets/BRAND.md                           Brand asset provenance
+scripts/serve.mjs                         Loopback-only static preview server
+scripts/check.mjs                         Dependency-free validation
 ```
 
-## 导出 PDF
+## Export to PDF
 
-建议桌面 Chrome / Edge 内置“另存为 PDF”：比例 100%，使用 CSS 默认纸张及边距，关闭浏览器页眉页脚，开启背景图形。文档为 A4 纵向；Slides 使用 `254mm × 142.875mm` 自定义横向页面，保持 16:9。
+Use desktop Chrome / Edge's built-in **Save as PDF**. Set scale to **100%**, retain CSS default paper and margins, disable browser headers and footers, and enable background graphics. Documents use A4 portrait; slides use `254mm × 142.875mm` landscape pages to preserve 16:9.
 
-文档使用显式页面区块，但不裁切长内容；超长内容可能续到额外页面，页脚不会自动重复，手写页码需要复核。Slides 为固定尺寸，每页内容过多时应拆页。自定义纸张是否被采用取决于浏览器及打印驱动，导出前必须看打印预览。
+Document blocks can grow instead of clipping content. Long sections may continue onto extra printed pages, without automatically repeating headers or footers; check manually written page numbers. Split overfull slides rather than shrinking text or hiding overflow. Browsers and drivers may override page sizes, so review the print preview after editing either language.
 
-## 视频与分享
+## Video and sharing
 
-视频示例默认是带说明的插槽，不包含虚假的演示视频。添加自己的 `source` 后会显示播放器；打印时保留单独封面。务必填写实际观看链接和文字说明。
+The video example is a labelled placeholder. Add your own `source` to enable playback. Supply a real viewing link and text alternative; PDF exports retain a separate cover image.
 
-离线分享需要 HTML、CSS、JS 和媒体一起打包，保留目录结构。在线分享可使用静态托管服务，仓库根目录就是站点目录。本次不含部署、推送或在线发布。公共样式会影响所有引用它的文档，正式存档时建议为发布版本保留一份完整快照。
+For offline sharing, package HTML, CSS, JavaScript and media together with relative paths intact. For online sharing, use a static host with the repository root as the site directory. Hosting has not been configured or published. Archive a complete snapshot for stable releases, since shared stylesheet changes affect all documents that reference them.
 
-## 品牌与许可
+## Brand and permissions
 
-Logo 与色彩来自 [AIPE 官网](https://aipel.co.uk/)，来源见 `assets/BRAND.md`。采用系统字体以保证离线可用，未下载第三方字体。Logo、商标及用户后续加入的内容保留各自权利；本仓库尚未指定对外分发许可。模板中的教学文案和图示不代表已验证的工程结果。
+Original logos and colours come from the [AIPE website](https://aipel.co.uk/); see [brand provenance](assets/BRAND.md). System fonts support offline reading; no third-party fonts are downloaded. Logos, trademarks and subsequently added content retain their respective rights. No distribution licence has been assigned to this repository. Sample text and illustrations do not represent validated engineering results.
